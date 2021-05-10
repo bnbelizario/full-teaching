@@ -83,17 +83,30 @@ public class CourseTest {
 	
 	@Test
 	void testAttenders() {
-		assertNotNull(this.curso.getCourseDetails());
+		assertNotNull(this.curso.getAttenders());
 		
-		CourseDetails novosDetalhes = mock(CourseDetails.class);
-		this.curso.setCourseDetails(novosDetalhes);
+		Set<User> attenders;
+		attenders = new HashSet<User>();
+		attenders.add(mock(User.class));
+		attenders.add(mock(User.class));
 		
-		assertEquals(this.curso.getCourseDetails(), novosDetalhes);		
+		this.curso.setAttenders(attenders);
+		
+		assertEquals(this.curso.getAttenders(), attenders);		
 	}
 	
 	@Test
 	void testSessions() {
+		assertNotNull(this.curso.getSessions());
 		
+		Set<Session> sessions;
+		sessions = new HashSet<Session>();
+		sessions.add(mock(Session.class));
+		sessions.add(mock(Session.class));
+		
+		this.curso.setSessions(sessions);
+		
+		assertEquals(this.curso.getSessions(), sessions);
 	}
 	
 	@Test

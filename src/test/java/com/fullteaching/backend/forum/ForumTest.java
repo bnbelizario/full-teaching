@@ -24,7 +24,7 @@ public class ForumTest {
 	
 	@BeforeEach
 	void init() {
-		this.forum = new Forum();
+		this.forum = new Forum(true);
 		this.topicos = new ArrayList<>();
 		this.topico1 = mock(Entry.class);
 		this.topico2 = mock(Entry.class);
